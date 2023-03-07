@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>  
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
-        <link rel="stylesheet" type="text/css" href="index.css">   
-        <script src="index.js"></script>       
-        <!-- NEW MENY LIST -->
-        <div class="dropdown">  
-            <button class="dropdown-button">
-                MENY  </button>  <div class="dropdown-content">  
-            <div> <a href="#"> USEFUL INFORMATION </a> </div>    <div> <a href="#"> VOTE FOR CLASS PRESIDENT</a> </div>    <div> <a href="#"> NOMINATE A CLASS STUDENT</a> </div>    <div> <a href="#">INTERACTIVE MAP</a> </div>  <div> <a href="#">LOG OUT</a> </div>  </div></div><div id="logo">  LOGO</div><div id="buttons">    <a href="#" class="button" id="map-button">Map</a>    <a href="#" class="button" id="voting-system-button">Voting system</a></div></body></html>
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">   
+</head>
+<body>
+    <!-- NEW MENY LIST -->
+    <div class="dropdown">  
+        <button class="dropdown-button">
+            MENY  
+        </button>  
+        <div class="dropdown-content">  
+            <div>
+                <a href="#">USEFUL INFORMATION</a>
+            </div>    
+            <div>
+                <a href="#">VOTE FOR CLASS PRESIDENT</a>
+            </div>    
+            <div>
+                <a href="#">NOMINATE A CLASS STUDENT</a>
+            </div>    
+            <div>
+                <a href="#">INTERACTIVE MAP</a>
+            </div>  
+            <div>
+                <a href="#">LOG OUT</a>
+            </div> 
+        </div>
+    </div>
+    <div id="logo">
+        LOGO
+    </div>
+    <div id="buttons">
+        <a href="#" class="button" id="map-button">Map</a>    
+        <a href="#" class="button" id="voting-system-button">Voting system</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script>
+        $(document).ready(function() {
+            $(".dropdown-button").click(function() {
+                $(".dropdown-content").toggle();
+                $(this).toggleClass("clicked");
+            });
+        });
+    </script>
+</body>
+</html>
