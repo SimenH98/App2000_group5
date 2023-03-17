@@ -1,0 +1,29 @@
+nav {
+    background-color: #563d7c; /* sets the background color of the navigation bar */
+    color: #fff; /* sets the text color of the navigation bar to white */
+    padding: 30px 60px; /* sets the top and bottom padding to 30px and left and right padding to 60px */
+    display: flex; /* uses the Flexbox layout to arrange the items in the navigation bar */
+    justify-content: space-between; /* aligns the items in the navigation bar with space between them */
+}
+
+nav ul {
+    display: flex; /* uses the Flexbox layout to arrange the items in the unordered list */
+    justify-content: space-around; /* aligns the items in the unordered list with space around them */
+    align-items: center; /* centers the items vertically in the unordered list */
+}
+
+nav li {
+    list-style: none; /* removes the bullet point from each list item */
+}
+
+nav li a {
+    color: #fff; /* sets the text color of each link in the navigation bar to white */
+    text-decoration: none; /* removes the underline from each link in the navigation bar */
+    font-weight: bold; /* sets the font weight of each link in the navigation bar to bold */
+    padding: 5px 8px; /* sets the top and bottom padding to 5px and left and right padding to 8px for each link in the navigation bar */
+}
+
+nav li a:hover {
+    color: yellow; /* sets the text color of each link in the navigation bar to yellow when hovered over */
+    text-decoration: none; /* removes the underline from each link in the navigation bar when hovered over */
+}
