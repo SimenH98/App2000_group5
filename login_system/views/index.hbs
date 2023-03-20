@@ -19,10 +19,15 @@
         <ul>
             <!-- Link to home page -->
             <li><a href="/">Home</a></li>
-            <!-- Link to login page -->
-            <li><a href="/login">Login</a></li>
-            <!-- Link to register page -->
-            <li><a href="/register">Register</a></li>
+            {{#if user }}
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+            {{else}}
+                <!-- Link to login page -->
+                <li><a href="/login">Login</a></li>
+                <!-- Link to register page -->
+                <li><a href="/register">Register</a></li>
+            {{/if}}
         </ul>
     </nav>
     

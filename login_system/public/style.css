@@ -27,3 +27,14 @@ nav li a:hover {
     color: yellow; /* sets the text color of each link in the navigation bar to yellow when hovered over */
     text-decoration: none; /* removes the underline from each link in the navigation bar when hovered over */
 }
+
+.avatar-ctn {
+    background-color: orange;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.avatar {
+    width: 65%;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}

@@ -1,6 +1,8 @@
 const mysql = require("mysql"); // Importing the MySQL module
 const jwt = require('jsonwebtoken'); // Importing the JSON Web Token (JWT) module
 const bcrypt = require('bcryptjs'); // Importing the Bcrypt module for password hashing
+const { promisify } = require('util');
+const { error } = require("console");
 
 // Creating a MySQL connection object with the database credentials stored in environment variables
 const db = mysql.createConnection({
@@ -26,7 +28,7 @@ exports.login = (req, res) => {
         db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
             console.log(results);
             // Checking if a user with the provided email was found and if the provided password matches the hashed password in the database
-            if( !results || !(await bcrypt.compare(password, results[0].password)) ) {
+            if( !results || results.length === 0 || !(await bcrypt.compare(password, results[0].password)) ) {
                 // If the email or password is incorrect, render the login page with an error message
                 res.status(401).render('login', {
                     message: 'Email or Password is incorrect'
@@ -101,4 +103,44 @@ exports.register = (req, res) => {
             }
         })
     });
+}
+
+exports.isLoggedIn = async (req, res, next) => {
+   // console.log(req.cookies);
+    if( req.cookies.jwt) {
+        try {
+          //1) verify the token  
+          const decoded = await promisify(jwt.verify)(req.cookies.jwt,
+          process.env.JWT_SECRET
+          );
+            
+          console.log(decoded);
+          
+          // Check if the user still exists
+          db.query('SELECT * FROM users WHERE id = ?', [decoded.id], (error, result) => {
+            console.log(result);
+
+            if(!result) {
+                return next();
+            }
+
+            req.user = result[0];
+            return next();
+
+          });
+        } catch (error) {
+          console.log(error);
+          return next();  
+        }
+    } else {
+      next();  
+    }
+}
+
+exports.logout = async (req, res,) => {
+    res.cookie('jwt', 'logout', {
+        expires: new Date(Date.now() + 2*1000),
+        httpOnly: true
+    });
+    res.status(200).redirect('/');
 }
