@@ -121,4 +121,84 @@
     .button:hover {
         border: 3px solid rgb(70, 210, 0);
     }
+
+
+
+
+
+
+/* DRAWER */
+#nav-drawer {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Set the initial position of the drawer */
+  height: 100%;
+  width: 300px;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  cursor: pointer;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: #ff0000;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:checked ~ #nav-drawer {
+  left: 0; /* Move the drawer to the left when the checkbox is checked */
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.nav-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-content a {
+  display: block;
+  font-size: 1.5rem; /* adjust the font size to your liking */
+  line-height: 2rem; /* adjust the line distance to your liking */
+  margin-bottom: 3rem; /* add some bottom margin to separate the links */
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
     
