@@ -75,8 +75,8 @@ darkMode.addEventListener("click", () => {
     "-= 700"
     )
     .add({
-        target: "main .poll-list a:hover",
-        boxShadow: toggle ? "rgba(0, 0, 0, 0.2)" : "rgb(255, 255, 255)"
+        target: ".poll-list a:hover",
+        boxShadow: toggle ? "0 5px 10px rgba(0, 0, 0, 0.2)" : "0 5px 10px rgb(255, 255, 255)"
     },
     "-= 700"
     )
