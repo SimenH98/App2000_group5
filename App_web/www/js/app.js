@@ -23,7 +23,7 @@ darkMode.addEventListener("click", () => {
     })
     .add({
         targets: "#darkMode",
-        rotate: 320
+        rotate: toggle ? 0 : 320
     },
      "-= 350"
     )
@@ -46,6 +46,7 @@ darkMode.addEventListener("click", () => {
         targets: "#logo",
         backgroundColor: toggle ? "rgb(255, 255, 255)" : "rgb(33,33,33)",
         color: toggle ? "rgb(22,22,22)" : "rgb(255,255,255)"
+        
 
     },
     "-= 700"
@@ -70,6 +71,12 @@ darkMode.addEventListener("click", () => {
         /*backgroundColor: toggle ? "rgb(192, 192, 192)" : "rgb(22,22,22)",*/
         color: toggle ? "rgb(22,22,22)" : "rgb(255,255,255)"
 
+    },
+    "-= 700"
+    )
+    .add({
+        target: "main .poll-list a:hover",
+        boxShadow: toggle ? "rgba(0, 0, 0, 0.2)" : "rgb(255, 255, 255)"
     },
     "-= 700"
     )
