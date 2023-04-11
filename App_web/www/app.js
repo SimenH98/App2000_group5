@@ -22,7 +22,7 @@ const db = mysql.createConnection({
 
 // Define the public directory for static files like CSS and images
 const publicDirectory = path.join(__dirname, './css');
-const publicDirectory2 = path.join(__dirname, './anime-master');
+const publicDirectory2 = path.join(__dirname, './anime-master/lib');
 const publicDirectory3 = path.join(__dirname, './js');
 app.use(express.static(publicDirectory));
 app.use(express.static(publicDirectory2));
