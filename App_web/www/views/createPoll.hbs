@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voting system</title>
+  <link rel="stylesheet" href="/pollsList.css">
+</head>
+<body>
+  <header>
+      <!-- NAVIGATION DRAWER -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div id="nav-drawer">
+        <div class="nav-content">
+          <a href="/">Home</a>
+          <a href="#">Useful information</a>
+          <a href="#">Vote on a poll</a>
+          <a href="#">Interactive map</a>
+         <a href="/auth/logout">Logout</a>
+        </div>
+      </div>
+        <!-- NAVIGATION DRAWER -->
+      <br/>
+
+    <h1>Voting system</h1>
+
+  </header>
+  <section>
+    <svg
+    id="darkMode" 
+    width="55" 
+    height="55" 
+    viewBox="0 0 55 55" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+        >
+        <path
+        class="sun" 
+            d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z" 
+            fill="#FFA800"
+            transform="translate(0, 0)"
+        />
+    </svg>
+    </section>
+
+  <main>
+    
+    <legend>Here you can see available polls where you can vote</legend>
+
+    <form action="/*where to store the data*/" method="post">
+        <h2>Create a poll</h2>
+        <label for="question">Question:</label>
+        <input type="text" name="question" id="question">
+        <br>
+        <label for="option1">Option 1:</label>
+        <input type="text" name="option1" id="option1" required>
+        <br>
+        <label for="option2">Option 2:</label>
+        <input type="text" name="option2" id="option2" required>
+        <br>
+        <label for="option3">Option 3:</label>
+        <input type="text" name="option3" id="option3">
+        <br>
+        <input type="submit" value="Create poll">
+      </form>
+      
+
+  </main>
+  <footer>
+    <p>&copy; 2023 Polls List</p>
+  </footer>
+    <script src="/anime.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
