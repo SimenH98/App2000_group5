@@ -40,5 +40,19 @@ router.get('/pollsList', authController.isLoggedIn, (req, res, next) => {
     
 });
 
+// Setting up a route for the createPoll page ('/createPoll')
+router.get('/createPoll', authController.isLoggedIn, (req, res, next) => {
+    console.log(req.user);
+    if( req.user ) {
+        // Rendering the 'profile' view
+        res.render('createPoll', {
+            user: req.user
+        }); 
+    } else {
+        res.redirect('/login');
+    }
+    
+});
+
 // Exporting the router so that it can be used in other files
 module.exports = router;
