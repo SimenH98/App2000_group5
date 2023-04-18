@@ -71,11 +71,15 @@
         <h3>Question for studie:</h3>
         <input type="checkbox" name="studie" value="studie"/>
         <br/>
-        <input type="submit" value="Create poll" id="createPoll" name="createPoll"/>
-        <input type="cancel" value="Cancel" id="cancel" name="cancel"/>
-
+        <input type="submit" value="Create poll" id="createPoll" name="createPoll" onClick="redirect()"/>
+        <input type="cancel" value="Cancel" id="cancel" name="cancel" onClick="redirect()"/>
       </form>
-      
+    
+      <script>
+        function redirect() {
+          window.location.href="/pollsList";
+        }
+      </script>
 
   </main>
   <footer>
