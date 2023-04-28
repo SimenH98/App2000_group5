@@ -43,6 +43,27 @@ darkMode.addEventListener("click", () => {
     "-= 700"
     )
     .add({
+        targets: "p",
+        color: toggle ? "rgb(22,22,22)" : "rgb(255,255,255)"
+
+    },
+    "-= 700"
+    )
+    .add({
+        targets: "a p",
+        color: toggle ? "rgb(22,22,22)" : "rgb(22,22,22)"
+
+    },
+    "-= 700"
+    )
+    .add({
+        targets: "fieldset",
+        color: toggle ? "rgb(22,22,22)" : "rgb(255,255,255)"
+
+    },
+    "-= 700"
+    )
+    .add({
         targets: "#logo",
         backgroundColor: toggle ? "rgb(255, 255, 255)" : "rgb(33,33,33)",
         color: toggle ? "rgb(22,22,22)" : "rgb(255,255,255)"
@@ -77,6 +98,12 @@ darkMode.addEventListener("click", () => {
     .add({
         target: ".poll-list a:hover",
         boxShadow: toggle ? "0 5px 10px rgba(0, 0, 0, 0.2)" : "0 5px 10px rgb(255, 255, 255)"
+    },
+    "-= 700"
+    )
+    .add({
+        targets: "form, section",
+        backgroundColor: toggle ? "rgb(255, 255, 255)" : "rgb(80,80,80)",
     },
     "-= 700"
     )
