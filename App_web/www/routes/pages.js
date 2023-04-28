@@ -68,12 +68,12 @@ router.get('/map', authController.isLoggedIn, (req, res, next) => {
     
 });
 
-// Setting up a route for the profile page ('/profile')
-router.get('/profile', authController.isLoggedIn, (req, res, next) => {
+// Setting up a route for the myPage page ('/myPage')
+router.get('/myPage', authController.isLoggedIn, (req, res, next) => {
     console.log(req.user);
     if( req.user ) {
-        // Rendering the 'profile' view
-        res.render('profile', {
+        // Rendering the 'myPage' view
+        res.render('myPage', {
             user: req.user
         }); 
     } else {
