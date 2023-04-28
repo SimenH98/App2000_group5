@@ -54,5 +54,33 @@ router.get('/createPoll', authController.isLoggedIn, (req, res, next) => {
     
 });
 
+// Setting up a route for the map page ('/map')
+router.get('/map', authController.isLoggedIn, (req, res, next) => {
+    console.log(req.user);
+    if( req.user ) {
+        // Rendering the 'map' view
+        res.render('map', {
+            user: req.user
+        }); 
+    } else {
+        res.redirect('/login');
+    }
+    
+});
+
+// Setting up a route for the profile page ('/profile')
+router.get('/profile', authController.isLoggedIn, (req, res, next) => {
+    console.log(req.user);
+    if( req.user ) {
+        // Rendering the 'profile' view
+        res.render('profile', {
+            user: req.user
+        }); 
+    } else {
+        res.redirect('/login');
+    }
+    
+});
+
 // Exporting the router so that it can be used in other files
 module.exports = router;
