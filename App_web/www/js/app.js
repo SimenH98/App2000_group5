@@ -102,7 +102,7 @@ darkMode.addEventListener("click", () => {
     "-= 700"
     )
     .add({
-        targets: "form, section",
+        targets: "form",
         backgroundColor: toggle ? "rgb(255, 255, 255)" : "rgb(80,80,80)",
     },
     "-= 700"
