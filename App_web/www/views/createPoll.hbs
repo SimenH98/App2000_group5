@@ -1,92 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Voting system</title>
   <link rel="stylesheet" href="/pollsList.css">
 </head>
+
 <body>
   <header>
-      <!-- NAVIGATION DRAWER -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <div id="nav-drawer">
-        <div class="nav-content">
-          <a href="/">Home</a>
-          <a href="/myPage">My Page</a>
-          <a href="#">Useful information</a>
-          <a href="/pollsList">Vote on a poll</a>
-          <a href="/map">Interactive map</a>
-         <a href="/auth/logout">Logout</a>
-        </div>
+    <!-- NAVIGATION DRAWER -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div id="nav-drawer">
+      <div class="nav-content">
+        <a href="/">Home</a>
+        <a href="/myPage">My Page</a>
+        <a href="#">Useful information</a>
+        <a href="/pollsList">Vote on a poll</a>
+        <a href="/map">Interactive map</a>
+        <a href="/auth/logout">Logout</a>
       </div>
-        <!-- NAVIGATION DRAWER -->
-      <br/>
+    </div>
+    <!-- NAVIGATION DRAWER -->
+    <br />
 
     <h1>Voting system</h1>
 
   </header>
   <section>
-    <svg
-    id="darkMode" 
-    width="55" 
-    height="55" 
-    viewBox="0 0 55 55" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-        >
-        <path
-        class="sun" 
-            d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z" 
-            fill="#FFA800"
-            transform="translate(0, 0)"
-        />
+    <svg id="darkMode" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="sun"
+        d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z"
+        fill="#FFA800" transform="translate(0, 0)" />
     </svg>
-    </section>
+  </section>
 
   <main>
-    
+
     <legend>Here you can submit a poll</legend>
     <p>Remember to check the boxes you want the question to be valid for, for your campus and/or your studie</p>
 
-    <form action="/*where to store the data*/" method="post">
-        <h2>Create a poll</h2>
-        <label for="question">Question:</label>
-        <input type="text" name="question" id="question"/>
-        <br/>
-        <label for="option1">Option 1:</label>
-        <input type="text" name="option1" id="option1" required/>
-        <br/>
-        <label for="option2">Option 2:</label>
-        <input type="text" name="option2" id="option2" required/>
-        <br/>
-        <label for="option3">Option 3:</label>
-        <input type="text" name="option3" id="option3"/>
-        <br/>
-        <h3>Question for campus:</h3>
-        <input type="checkbox" name="campus" value="campus"/>
-        <h3>Question for studie:</h3>
-        <input type="checkbox" name="studie" value="studie"/>
-        <br/>
-        <input type="submit" value="Create poll" id="createPoll" name="createPoll" onClick="redirect()"/>
-        <input type="button" value="Cancel" id="cancel" name="cancel" onClick="redirect()"/>
-      </form>
-    
-      <script>
-        function redirect() {
-          window.location.href="/pollsList";
-        }
-      </script>
+    <form action="create" method="post">
+      <h2>Create a poll</h2>
+      <label for="TitleText">Question:</label>
+      <input type="text" name="titleText" id="titleText" required />
+      <br />
+      <label for="descriptionText">DescriptionText</label>
+      <input type="text" name="descriptionText" id="descriptionText" required />
+      <br />
+      <label for="opAnswer">Answer 1</label>
+      <input type="text" name="opAnswer" id="opAnswer" required />
+      <br />
+      <label for="opAnswer">Answer 2</label>
+      <input type="text" name="opAnswer" id="opAnswer" required />
+      <br />
+      <label for="opAnswer">Answer 3</label>
+      <input type="text" name="opAnswer" id="opAnswer" />
+      <br />
+      <h3>Question for campus:</h3>
+      <input type="checkbox" name="idCampus" value="idCampus" />
+      <h3>Question for studie:</h3>
+      <input type="checkbox" name="idStudie" value="idStudie" />
+      <br />
+
+
+      <input type="submit" value="Create poll" id="createPoll" name="createPoll" onClick="redirect(pollsList)" />
+      <input type="button" value="Cancel" id="cancel" name="cancel" onClick="redirect()" />
+    </form>
+
+    <script>
+      function redirect() {
+        window.location.href = "/pollsList";
+      }
+    </script>
 
   </main>
   <footer>
     <p>&copy; 2023 Polls List</p>
   </footer>
-    <script src="/anime.min.js"></script>
-    <script src="/app.js"></script>
+  <script src="/anime.min.js"></script>
+  <script src="/app.js"></script>
 </body>
+
 </html>
