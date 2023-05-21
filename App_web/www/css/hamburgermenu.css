@@ -39,27 +39,32 @@
       .dropdown:hover .dropdown-content {
         opacity: 1;
       } 
-/*End of menu*/
+
 
 /* DRAWER */
 #nav-drawer {
     position: fixed;
     top: 0;
-    left: -300px; /* Set the initial position of the drawer */
-    height: 100%;
-    width: 300px;
+    left: -300px; /* The initial position of the drawer */
+    height: 100%;  /* height of the drawer so it covers the entire line */
+    width: 300px;    /* width of the drawer, 300px fits the text */
     z-index: 999;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #4CAF50;      /* color that fits best */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* shadow */
     overflow-x: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;  /* CREATES TRANSTION ANIMATION */
     }
+
+ #nav-drawer a:hover {  /* When mouse hovers over, the color changes to red */ 
+    color: #ff0000;
+    text-decoration: none;  
+  }
     
     .nav-toggle {
     display: none;
     }
     
-    .nav-toggle-label {
+    .nav-toggle-label {   /* toggle lable css, this is the position and look of the button on the top left that shows the drawer when clicked */
     position: fixed;
     top: 15px;
     left: 15px;
@@ -70,7 +75,7 @@
     height: 35px;
     }
     
-    .nav-toggle-label span {
+    .nav-toggle-label span { /* Look of the button to open drawer meny */
     display: block;
     height: 3px;
     width: 100%;
@@ -80,8 +85,10 @@
     }
     
     .nav-toggle:checked ~ #nav-drawer {
-    left: 0; /* Move the drawer to the left when the checkbox is checked */
+    left: 0;  /* Move the drawer to the left when the checkbox is checked */
     }
+
+ /* Anitmation of the drawer when clicked */
     
     .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
     transform: rotate(-45deg) translate(-6px, 6px);
@@ -95,7 +102,7 @@
     transform: rotate(45deg) translate(-6px, -6px);
     }
     
-    .nav-content {
+    .nav-content {   /* Position alignement & display of the text on the drawer meny */ 
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -104,11 +111,11 @@
     flex-direction: column;
     }
     
-    .nav-content a {
+    .nav-content a {  /* FOR THE TEXT ON THE DRAWER MENY (SIZE, COLOR, FONT, AND LOOK */ 
     display: block;
-    font-size: 1.5rem; /* adjust the font size to your liking */
-    line-height: 2rem; /* adjust the line distance to your liking */
-    margin-bottom: 3rem; /* add some bottom margin to separate the links */
+    font-size: 1.5rem;
+    line-height: 2rem; 
+    margin-bottom: 3rem; 
     color: #000000;
     text-decoration: none;
     font-weight: bold;
@@ -119,15 +126,20 @@
 #nav-drawer {
     position: fixed;
     top: 0;
-    left: -300px; /* Set the initial position of the drawer */
+    left: -300px; 
     height: 100%;
     width: 300px;
     z-index: 999;
-    background-color: #fff;
+    background-color: #4CAF50;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     overflow-x: hidden;
     transition: all 0.3s ease;
     }
+
+#nav-drawer a:hover {  
+    color: #ff0000;
+    text-decoration: none; 
+  }
     
     .nav-toggle {
     display: none;
@@ -154,7 +166,7 @@
     }
     
     .nav-toggle:checked ~ #nav-drawer {
-    left: 0; /* Move the drawer to the left when the checkbox is checked */
+    left: 0; 
     }
     
     .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
@@ -180,9 +192,9 @@
     
     .nav-content a {
     display: block;
-    font-size: 1.5rem; /* adjust the font size to your liking */
-    line-height: 2rem; /* adjust the line distance to your liking */
-    margin-bottom: 3rem; /* add some bottom margin to separate the links */
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+    margin-bottom: 3rem; 
     color: #000000;
     text-decoration: none;
     font-weight: bold;

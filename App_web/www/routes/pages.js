@@ -55,6 +55,20 @@ router.get('/pollsList', authController.isLoggedIn, (req, res, next) => {
 
 });
 
+// Setting up a route for the useful information page ('/useful-information')
+router.get('/useful-information', authController.isLoggedIn, (req, res, next) => {
+    console.log(req.user);
+    if (req.user) {
+        // Rendering the 'profile' view
+        res.render('useful-information', {
+            user: req.user
+        });
+    } else {
+        res.redirect('/login');
+    }
+
+});
+
 
 
 
