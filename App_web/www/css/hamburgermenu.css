@@ -57,7 +57,7 @@
 
  #nav-drawer a:hover {  /* When mouse hovers over, the color changes to red */ 
     color: #ff0000;
-    text-decoration: none;  /* ? */ 
+    text-decoration: none;  
   }
     
     .nav-toggle {
@@ -130,11 +130,16 @@
     height: 100%;
     width: 300px;
     z-index: 999;
-    background-color: #fff;
+    background-color: #4CAF50;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     overflow-x: hidden;
     transition: all 0.3s ease;
     }
+
+#nav-drawer a:hover {  
+    color: #ff0000;
+    text-decoration: none; 
+  }
     
     .nav-toggle {
     display: none;
