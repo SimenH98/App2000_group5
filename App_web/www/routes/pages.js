@@ -125,8 +125,8 @@ router.post('/create', function (req, res, next) {
 
 })
 
-router.get('/viewpoll/{poll.id}', function (req, res, next) {
-
+router.get('/viewpoll/:idpolls', function (req, res, next) {
+    const idpolls = req.params.idpolls;
     const titleText = req.body.titleText;
     const descriptionText = req.body.descriptionText;
     const idCampus = req.body.idCampus;
@@ -135,30 +135,30 @@ router.get('/viewpoll/{poll.id}', function (req, res, next) {
     const question2 = req.body.question2;
     const question3 = req.body.question3;
 
-    let poll = {
-        id: ("${id}"),
-        titleText: ("${titleText}"),
-        question1: ("${question1}"),
-        question2: ("${question2}"),
-        question3: ("${question3}"),
-        pollCount: 0,
-        answersWeight: [0, 0, 0, 0],
-        selectedAnswers: -1
-    };
-
-
-    let pollDOM = {
-        question: document.querySelector(".poll .question"),
-        answers: document.querySelector(".poll .answers")
-    };
-
-
-    const query = 'SELECT * FROM polls, answers ORDER BY id';
+    const query = 'SELECT * FROM polls';
     db.query(query, function (err, rows, fields) {
         if (err) throw err;
 
 
     })
+
+    let poll = {
+        idpolls: ("${idpolls}"),
+        titleText: ("${titleText}"),
+        question1: ("${question1}"),
+        question2: ("${question2}"),
+        question3: ("${question3}"),
+        pollCount: 0,
+        answersWeight: [0, 0, 0],
+        selectedAnswers: -1
+    };
+
+
+    let pollDOM = {
+        question: document.querySelector(".poll .titleText"),
+        answers: document.querySelector(".poll .question1 .question2 .question3")
+    };
+
 
 
     pollDOM.question.innerText = poll.question;
@@ -177,7 +177,7 @@ router.get('/viewpoll/{poll.id}', function (req, res, next) {
     function markAnswer(i) {
         poll.selectedAnswer = +i;
         try {
-            document.querySelector(".poll .answers .answer.select").classList.remove("selected");
+            document.querySelector(".poll .answers .answer .select").classList.remove("selected");
         } catch (msg) { }
         document.querySelectorAll(".poll .answers .answer")[+i].classList.remove("selected");
         showResults();
@@ -201,7 +201,7 @@ router.get('/viewpoll/{poll.id}', function (req, res, next) {
             answers[i].querySelector(".percentage-value").innerText = percentage + "%";
         }
     }
-    res.render('viewpoll', { title: 'viewpoll' });
+    res.render('viewpoll/:idpolls', { title: 'viewpoll' });
 })
 
 // Exporting the router so that it can be used in other files

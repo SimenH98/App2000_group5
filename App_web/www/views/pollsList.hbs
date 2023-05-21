@@ -48,36 +48,36 @@
     <a href="/createPoll" class="create-poll">Create Poll</a>
 
     <section class="poll-list">
-  <h2>Latest Polls</h2>
-  <table class="poll-table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Campus ID</th>
-        <th>Studies ID</th>
-        <th>Question 1</th>
-        <th>Question 2</th>
-        <th>Question 3</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each polls}}
-      <tr>
-        <td>{{this.titleText}}</td>
-        <td>{{this.descriptionText}}</td>
-        <td>{{this.idCampus}}</td>
-        <td>{{this.idStudies}}</td>
-        <td>{{this.question1}}</td>
-        <td>{{this.question2}}</td>
-        <td>{{this.question3}}</td>
-        <td><a href="viewpoll/{{this.id}}" class="create-poll">Vote</a></td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-</section>
+      <h2>Latest Polls</h2>
+      <table class="poll-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Campus ID</th>
+            <th>Studies ID</th>
+            <th>Question 1</th>
+            <th>Question 2</th>
+            <th>Question 3</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each polls}}
+          <tr>
+            <td>{{this.titleText}}</td>
+            <td>{{this.descriptionText}}</td>
+            <td>{{this.idCampus}}</td>
+            <td>{{this.idStudies}}</td>
+            <td>{{this.question1}}</td>
+            <td>{{this.question2}}</td>
+            <td>{{this.question3}}</td>
+            <td><a href="viewpoll/{{this.id}}" class="create-poll">Vote</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
 
   </main>
   <footer>
