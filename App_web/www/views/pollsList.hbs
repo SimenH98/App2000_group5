@@ -1,65 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Voting system</title>
   <link rel="stylesheet" href="/pollsList.css">
 </head>
+
 <body>
   <header>
-      <!-- NAVIGATION DRAWER -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <div id="nav-drawer">
-        <div class="nav-content">
-          <a href="/">Home</a>
-          <a href="/myPage">My Page</a>
-          <a href="#">Useful information</a>
-          <a href="/pollsList">Vote on a poll</a>
-          <a href="/map">Interactive map</a>
-         <a href="/auth/logout">Logout</a>
-        </div>
+    <!-- NAVIGATION DRAWER -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div id="nav-drawer">
+      <div class="nav-content">
+        <a href="/">Home</a>
+        <a href="/myPage">My Page</a>
+        <a href="#">Useful information</a>
+        <a href="/pollsList">Vote on a poll</a>
+        <a href="/map">Interactive map</a>
+        <a href="/auth/logout">Logout</a>
       </div>
-        <!-- NAVIGATION DRAWER -->
-      <br/>
+    </div>
+    <!-- NAVIGATION DRAWER -->
+    <br />
 
     <h1>Voting system</h1>
 
   </header>
   <section>
-    <svg
-    id="darkMode" 
-    width="55" 
-    height="55" 
-    viewBox="0 0 55 55" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-        >
-        <path
-        class="sun" 
-            d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z" 
-            fill="#FFA800"
-            transform="translate(0, 0)"
-        />
+    <svg id="darkMode" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="sun"
+        d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z"
+        fill="#FFA800" transform="translate(0, 0)" />
     </svg>
-    </section>
+  </section>
 
   <main>
-    
+
     <legend>Here you can see available polls where you can vote</legend>
 
     <a href="/createPoll" class="create-poll">Create Poll</a>
 
-  
     <section class="poll-list">
       <h2>Latest Polls</h2>
       <ul>
         <li>
-          <a href="#">
+          <a href="/viewpoll">
             <h3>Poll Title 1</h3>
             <p>Description of poll 1</p>
             <span>10 votes</span>
@@ -67,9 +58,9 @@
         </li>
         <li>
           <a href="#">
-            <h3>Poll Title 2</h3>
-            <p>Description of poll 2</p>
-            <span>20 votes</span>
+            <h3>{{this.titleText}}</h3>
+            <p>{{this.descriptionText}}</p>
+            <span>{{this.votes}}</span>
           </a>
         </li>
         <li>
@@ -85,7 +76,8 @@
   <footer>
     <p>&copy; 2023 Polls List</p>
   </footer>
-    <script src="/anime.min.js"></script>
-    <script src="/app.js"></script>
+  <script src="/anime.min.js"></script>
+  <script src="/app.js"></script>
 </body>
+
 </html>

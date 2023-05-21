@@ -1,0 +1,149 @@
+body {
+  margin: 0px;  /* No margin or padding to fill the entire screen */ 
+  padding: 0px;
+  background-color: #ffffff; /* background color that fits for the rest of the page */
+}
+
+a {
+  color: rgb(90, 194, 239); /* link color */
+  
+}
+
+/* top line text */ 
+.top { 
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas: "header"
+ "meny"
+ "innhold"
+ "fot";
+}
+
+
+.header {   /* Header css, alignment, bg color & font */
+  
+  text-align: center;
+  background-color:#4CAF50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header h1 {       /* EDITING SIZE AND MARGIN ON H1 */
+  font-size: 60px;
+  margin: 10px 0px 0px 0px;  
+}
+
+
+.header h1,  /* EDITING COLOR ON H1 & H3 AND ADDING SHADOW TO TEXT */
+.header h3 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.innhold {  /* content css for font color and margin of the content */ 
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #ffffff;
+  margin: 40px 10% 10px 10%;
+  
+}
+
+h4 {  /* not bold text on h4 headers, unless added on the html */ 
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+/* DRAWER */
+#nav-drawer {
+    position: fixed;
+    top: 0;
+    left: -300px; /* The initial position of the drawer */
+    height: 100%;  /* height of the drawer so it covers the entire line */
+    width: 300px;   /* width of the drawer, 300px fits the text */
+    
+    background-color: #4CAF50;   /* color that fits best */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* shadow */
+    
+    transition: all 0.3s ease;  /* CREATES TRANSTION ANIMATION */
+   
+  }
+  
+  
+  #nav-drawer a:hover {  /* When mouse hovers over, the color changes to red */ 
+    color: #ff0000;
+  }
+  
+  
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label { /* toggle lable css, this is the position and look of the button on the top left that shows the drawer when clicked */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    cursor: pointer;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .nav-toggle-label span { /* Look of the button to open drawer meny */ 
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #ff0000;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-toggle:checked ~ #nav-drawer {
+    left: 0; /* Move the drawer to the left when the checkbox is checked */
+  }
+  
+  /* Anitmation of the drawer when clicked */
+  
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+  
+  .nav-content {   /* Position alignement & display of the text on the drawer meny */ 
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-content a {  /* FOR THE TEXT ON THE DRAWER MENY (SIZE, COLOR, FONT, AND LOOK */ 
+    display: block;
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+    margin-bottom: 3rem; 
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+  }
+  

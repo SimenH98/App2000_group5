@@ -3,10 +3,12 @@ const authController = require('../controllers/auth');  // Import the authContro
 
 const router = express.Router();  // Create a new Router object
 
-router.post('/register', authController.register );  // Set up a route to handle user registration
+router.post('/register', authController.register);  // Set up a route to handle user registration
 
-router.post('/login', authController.login );  // Set up a route to handle user login
+router.post('/login', authController.login);  // Set up a route to handle user login
 
-router.get('/logout', authController.logout );
+router.get('/logout', authController.logout);
+
+router.get
 
 module.exports = router;  // Export the router object so it can be used by other modules

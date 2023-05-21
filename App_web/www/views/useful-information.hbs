@@ -1,0 +1,73 @@
+
+  <head>
+    
+    <link rel="stylesheet" href="useful-information.css" />  <!-- linking to the CSS -->
+    <title> Useful Information</title>
+  </head>
+  <body>
+
+<!-- NAVIGATION DRAWER -->
+<input type="checkbox" id="nav-toggle" class="nav-toggle"> <!-- for the toggle button on NAVIGATION DRAWER, so the button animated and can be pressed -->
+<label for="nav-toggle" class="nav-toggle-label"> <!-- for the toggle button on NAVIGATION DRAWER, so the button animated and can be pressed -->
+<span></span>
+<span></span> <!-- for the toggle button on NAVIGATION DRAWER, so it shows and can be animated -->
+<span></span>
+</label>
+<div id="nav-drawer">
+<div class="nav-content">
+	
+	<a href="/">Home</a> <!-- Link to acces home page -->
+	<a href="#">Useful information</a> <!-- Link to useful information page -->
+	<a href="/pollsList"> Vote on a poll</a> <!-- Link to vote on a poll -->
+	<a href="#">Interactive map</a>  <!-- Link to acces interactive map -->
+<a href="/auth/logout">Logout</a> <!-- Link to logout -->
+</div>
+</div>
+
+
+
+<div class="top">
+      <div class="header"> <!-- header of page --> 
+        <h1> USEFUL INFORMATION </h1>
+        <h3>Here you can find information on this application, what kind of data storing is used, what the stored data is used for and a FAQ.</h3>
+      </div>
+
+      
+
+      <div class="innhold">   <!-- content --> 
+        <h1><b> APPLICATION </b></h1> <!-- header in bold --> 
+
+        <h4> <b> To make polls and to participate in others polls on this application you have to be logged in.  You can login <a href="login.html"> <u> here </u> </a>  </b> </h4> <!-- text of information about login, with link to login page and underline under login link so the user can see the link--> 
+
+		<!-- information about the application--> 
+		<h4> Through this application you can create polls for anything. The surveys are easy to create and you decide yourself who will participate in your surveys. The surveys you make and the answers you get are stored in a database. You can also see the results of your surveys and surveys that you have answered on "My profile".   </h4>
+
+	
+		<!-- information about the data storing--> 
+		<h1><b> DATA STORING </b> </h1>
+		<h4> This application only stores necessary data from polls, which includes, poll-name, poll-questions, poll-answers and poll-participants. The application also stores data necessary for logging inn to the application and profile information. NO DATA IS WILL EVER BE USED IN A HARMFUL OR NEGATIVE WAY TO THE USER AND WILL NOT BE SHARED!   </h4>
+
+       
+
+	 <div class="container"> 
+			<h1>FREQUENTLY ASKED QUESTIONS</h1> <!-- FAQ PAGE -->
+			<details>
+			  <summary><b>How do I edit my page?</b></summary> <!-- questions in bold text that you click to see the answer -->
+			  <div>
+				You can edit your page on the <a href="myPage.hbs">my page section</a>. <!-- the answer after clicking the question -->
+			  </div>
+			</details>
+		  </div>
+		  
+		  <details>
+			<div></div>
+			<summary><b>How do I create a poll?</b></summary> <!-- questions in bold text that you click to see the answer -->
+			<div>
+				You can create a poll on the <a href="pollsList.hbs"> Polls list section </a>. <!-- the answer after clicking the question -->
+			</div>
+		  </details>
+		  </div>
+
+		</div>
+	</body>
+  </html>
