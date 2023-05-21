@@ -139,20 +139,6 @@
   form input[type="submit"] :hover {
     background-color: #3e8e41;
   }
-  
-
-
-  
-  svg{
-      cursor: pointer;
-      display: flex;
-      justify-content: space-around;
-      position: absolute;
-      top: 3%;
-      right: 10%;
-      align-items: center;
-      flex-direction: column;
-  }
 
 html, body {
   height: 100%;
