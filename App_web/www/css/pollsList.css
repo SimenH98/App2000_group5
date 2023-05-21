@@ -172,24 +172,39 @@ html, body {
   height: 50px; 
 }
 
-.poll-list {
-  display: flex;
-  flex-direction: column;
+.poll-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.poll-list h2 {
-  text-align: center;
+.poll-table th,
+.poll-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-.poll-list tr {
-  display: flex;
-  flex-direction: row-reverse;
+.poll-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
-.poll-list th,
-.poll-list td {
-  flex: 1;
-  text-align: right;
-  padding: 5px;
-  border: 1px solid black;
+.poll-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.poll-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.create-poll {
+  padding: 6px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.create-poll:hover {
+  background-color: #45a049;
 }
