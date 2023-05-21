@@ -48,29 +48,34 @@
 
     <section class="poll-list">
       <h2>Latest Polls</h2>
-      <ul>
-        <li>
-          <a href="/viewpoll">
-            <h3>Poll Title 1</h3>
-            <p>Description of poll 1</p>
-            <span>10 votes</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>{{this.titleText}}</h3>
-            <p>{{this.descriptionText}}</p>
-            <span>{{this.votes}}</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>Poll Title 3</h3>
-            <p>Description of poll 3</p>
-            <span>5 votes</span>
-          </a>
-        </li>
-      </ul>
+      <tr>
+        <th>titleText</th>
+        <br />
+        <th>descriptionText</th>
+        <br />
+        <th>idCampus</th>
+        <br />
+        <th>idStudies</th>
+        <br />
+        <th>question1</th>
+        <br />
+        <th>question2</th>
+        <br />
+        <th>question3</th>
+        <br />
+      </tr>
+      {{#each polls}}
+      <tr>
+        <td>{{this.titleText}}</td>
+        <td>{{this.descriptionText}}</td>
+        <td>{{this.idCampus}}</td>
+        <td>{{this.idStudie}} </td>
+        <td>{{this.question1}}</td>
+        <td>{{this.question2}}</td>
+        <td>{{this.question3}}</td>
+        <td><a href="viewpoll/{{this.id}}" class="create-poll">Vote </a></td>
+      </tr>
+      {{/each}}
     </section>
   </main>
   <footer>

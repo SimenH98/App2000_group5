@@ -38,15 +38,20 @@ router.get('/login', (req, res, next) => {
 
 // Setting up a route for the pollsList page ('/pollsList')
 router.get('/pollsList', authController.isLoggedIn, (req, res, next) => {
+    const id = req.body.id;
+
+
+    const query = 'SELECT * FROM polls ';
     console.log(req.user);
-    if (req.user) {
-        // Rendering the 'profile' view
-        res.render('pollsList', {
-            user: req.user
-        });
-    } else {
-        res.redirect('/login');
-    }
+
+    db.query(query, function (err, rows, fields) {
+        if (err) throw err;
+        res.render('pollsList', { title: 'polls', polls: rows })
+    });
+
+
+
+
 
 });
 
@@ -90,22 +95,20 @@ router.post('/create', function (req, res, next) {
     const descriptionText = req.body.descriptionText;
     const idCampus = req.body.idCampus;
     const idStudies = req.body.idStudies;
-    const opAnswer = req.body.opAnswer;
+    const question1 = req.body.question1;
+    const question2 = req.body.question2;
+    const question3 = req.body.question3;
 
 
-    const sql = `INSERT INTO polls (titleText, descriptionText, idCampus, idStudies) VALUES ("${titleText}", "${descriptionText}", "${idCampus}", "${idStudies}")`;
+    const sql = `INSERT INTO polls (titleText, descriptionText, idCampus, idStudies, question1, question2, question3) VALUES ("${titleText}", "${descriptionText}", "${idCampus}", "${idStudies}", ("${question1}"), ("${question2}"), ("${question3}"))`;
 
-    const sql1 = `INSERT INTO answer (opAnswer) VALUES ("${opAnswer})`
+
 
     db.query(sql, function (err, result) {
         if (err) throw err;
         console.log('creating record');
     })
-    db.query(sql1, function (err, result) {
-        if (err) throw err;
-        console.log('record created');
-        res.redirect('/pollList');
-    })
+
 })
 
 router.get('/viewpoll', function (req, res, next) {
@@ -114,14 +117,75 @@ router.get('/viewpoll', function (req, res, next) {
     const descriptionText = req.body.descriptionText;
     const idCampus = req.body.idCampus;
     const idStudies = req.body.idStudies;
-    const opAnswer = req.body.opAnswer
+    const question1 = req.body.question1;
+    const question2 = req.body.question2;
+    const question3 = req.body.question3;
 
-    const query = 'SELECT * FROM poll, answers ORDER BY id';
+    let poll = {
+        question: ("${titleText}"),
+        answers: [
+            ("${question1}"), ("${question2}"), ("${question3}")
+        ],
+        pollCount: 0,
+        answersWeight: [0, 0, 0, 0],
+        selectedAnswers: -1
+    };
+
+    let pollDOM = {
+        question: document.querySelector(".poll .question"),
+        answers: document.querySelector(".poll .answers")
+    };
+
+
+    const query = 'SELECT * FROM polls, answers ORDER BY id';
     db.query(query, function (err, rows, fields) {
         if (err) throw err;
 
 
     })
+
+
+    pollDOM.question.innerText = poll.question;
+    pollDOM.answers.innerHTML = poll.answers.map(function (answer, i) {
+        return (`
+    <div class="answer" onclick="markAnswer('${i}')">
+    ${answer}
+    <span class="percentage-bar"></span>
+    <span class="percentage-value"></span>
+    </div>
+    
+    `
+        );
+    }).join("");
+
+    function markAnswer(i) {
+        poll.selectedAnswer = +i;
+        try {
+            document.querySelector(".poll .answers .answer.select").classList.remove("selected");
+        } catch (msg) { }
+        document.querySelectorAll(".poll .answers .answer")[+i].classList.remove("selected");
+        showResults();
+    }
+
+    function showResults() {
+        let answers = document.querySelectorAll(".poll .answers .answer");
+        for (let i = 0; i < answers.length; i++) {
+            let percentage = 0;
+            if (i == poll.selectedAnswer) {
+                percentage = Math.round(
+                    (poll.answersWeight[i] + 1) * 100 / (poll.pollCount + 1)
+                );
+            }
+            else {
+                percentage = Math.round(
+                    (poll.answersWeight[i]) * 100 / (poll.pollCount + 1)
+                );
+            }
+            answers[i].querySelector(".percentage-bar").style.width = percentage + "%";
+            answers[i].querySelector(".percentage-value").innerText = percentage + "%";
+        }
+    }
+    res.render('viewpoll', { title: 'viewpoll' });
 })
 
 // Exporting the router so that it can be used in other files
