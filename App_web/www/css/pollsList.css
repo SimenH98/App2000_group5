@@ -173,18 +173,23 @@ html, body {
 }
 
 .poll-list {
-  direction: rtl;
+  display: flex;
+  flex-direction: column;
 }
 
-.poll-list h2,
+.poll-list h2 {
+  text-align: center;
+}
+
 .poll-list tr {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-start;
 }
 
 .poll-list th,
 .poll-list td {
   flex: 1;
   text-align: right;
+  padding: 5px;
+  border: 1px solid black;
 }
