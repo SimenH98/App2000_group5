@@ -146,6 +146,7 @@ router.get('/viewpoll/{poll.id}', function (req, res, next) {
         selectedAnswers: -1
     };
 
+
     let pollDOM = {
         question: document.querySelector(".poll .question"),
         answers: document.querySelector(".poll .answers")
