@@ -173,46 +173,18 @@ html, body {
 }
 
 .poll-list {
-  margin-bottom: 20px;
+  direction: rtl;
 }
 
-.poll-list h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.poll-list table {
-  width: 100%;
-  border-collapse: collapse;
+.poll-list h2,
+.poll-list tr {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
 }
 
 .poll-list th,
 .poll-list td {
-  padding: 8px;
-  border: 1px solid #ccc;
+  flex: 1;
+  text-align: right;
 }
-
-.poll-list th {
-  background-color: #f2f2f2;
-}
-
-.poll-list tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.poll-list tr:hover {
-  background-color: #e3e3e3;
-}
-
-.poll-list a.create-poll {
-  color: #fff;
-  background-color: #007bff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.poll-list a.create-poll:hover {
-  background-color: #0056b3;
-}
-
