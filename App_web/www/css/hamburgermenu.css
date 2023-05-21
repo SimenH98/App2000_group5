@@ -49,7 +49,7 @@
     height: 100%;  /* height of the drawer so it covers the entire line */
     width: 300px;    /* width of the drawer, 300px fits the text */
     z-index: 999;
-    background-color: #fff;      /* color that fits best */
+    background-color: #4CAF50;      /* color that fits best */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* shadow */
     overflow-x: hidden;
     transition: all 0.3s ease;  /* CREATES TRANSTION ANIMATION */
