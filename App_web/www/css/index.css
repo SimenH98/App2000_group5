@@ -45,10 +45,11 @@
   /* Body */
   body {
   /*background-image: url("https://coolbackgrounds.io/images/backgrounds/index/aqua-d9b59c89.png");*/
-  background-color: rgb(204, 204, 204);
+  background-color: rgb(204, 204, 204); /* background color on the page */
   }
   
   /* Logo */
+/* Centered logo on the top of the page for position, size, color, height, font & alignment */
   #logo {
   position: absolute;
   top: 0;
@@ -64,12 +65,13 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
+/* for image logo*/
   #logo img {
   width: 10%;
   height: 1%;
   }
   
-  /* Buttons */
+ /* how the Buttons will look & work such as sizing, position, color, font, button layout */
   .button {
   position: absolute;
   top: 50%;
