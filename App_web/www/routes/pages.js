@@ -125,7 +125,7 @@ router.post('/create', function (req, res, next) {
 
 })
 
-router.get('/viewpoll', function (req, res, next) {
+router.get('/viewpoll/{poll.id}', function (req, res, next) {
 
     const titleText = req.body.titleText;
     const descriptionText = req.body.descriptionText;
@@ -136,10 +136,11 @@ router.get('/viewpoll', function (req, res, next) {
     const question3 = req.body.question3;
 
     let poll = {
-        question: ("${titleText}"),
-        answers: [
-            ("${question1}"), ("${question2}"), ("${question3}")
-        ],
+        id: ("${id}"),
+        titleText: ("${titleText}"),
+        question1: ("${question1}"),
+        question2: ("${question2}"),
+        question3: ("${question3}"),
         pollCount: 0,
         answersWeight: [0, 0, 0, 0],
         selectedAnswers: -1
